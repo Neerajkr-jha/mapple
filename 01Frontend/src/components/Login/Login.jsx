@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import bgImage from "../../assets/bg.jpg";
 
 function Login() {
   const navigate = useNavigate();
@@ -10,7 +11,10 @@ function Login() {
     navigate("/map"); 
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div 
+    className="min-h-screen flex items-center justify-center bg-gray-100 bg-cover bg-center"
+    style={{ backgroundImage: `url(${bgImage})` }}
+    >
       <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Welcome to MapmyIndia

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
+import { FaUserCircle } from "react-icons/fa"; // user profile icon
 
 function Map() {
   useEffect(() => {
-    // Create Mappls script elements
     const apiKey = "6815a707-0226-4b0c-826f-1805f1925a1d";
     const script1 = document.createElement("script");
     script1.src = `https://apis.mappls.com/advancedmaps/api/${apiKey}/map_sdk?layer=vector&v=3.0&callback=initMap1`;
@@ -12,11 +12,9 @@ function Map() {
     script2.src = `https://apis.mappls.com/advancedmaps/api/${apiKey}/map_sdk_plugins?v=3.0`;
     script2.async = true;
 
-    // Append scripts
     document.body.appendChild(script1);
     document.body.appendChild(script2);
 
-    // Global callback
     window.initMap1 = function () {
       const map = new window.mappls.Map("map", {
         center: [28.09, 78.3],
@@ -27,7 +25,6 @@ function Map() {
           region: "IND",
           height: 300,
         };
-        // Attach Mappls search to sidebar input "auto"
         new window.mappls.search(
           document.getElementById("auto"),
           optional_config,
@@ -56,7 +53,6 @@ function Map() {
       });
     };
 
-    // Cleanup
     return () => {
       document.body.removeChild(script1);
       document.body.removeChild(script2);
@@ -65,29 +61,27 @@ function Map() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
-      {/* Top Navbar */}
-      <header className="flex justify-between items-center bg-gray-200 px-6 py-3 shadow-md">
-        <div className="flex space-x-4">
-          <button className="px-4 py-2 rounded-md bg-gray-500 text-white">
-            Home
-          </button>
-          <button className="px-4 py-2 rounded-md bg-gray-500 text-white">
-            Explore
-          </button>
-          <button className="px-4 py-2 rounded-md bg-gray-500 text-white">
-            Saved
-          </button>
-          <button className="px-4 py-2 rounded-md bg-gray-500 text-white">
-            Settings
-          </button>
-        </div>
-        <button className="w-8 h-8 rounded-md bg-gray-500"></button>
+      <header className="flex justify-between items-center bg-blue-500 px-6 py-3 shadow-md">
+        <nav className="flex space-x-8">
+          {["Home", "Explore", "Saved", "Settings"].map((item) => (
+            <button
+              key={item}
+              className="relative text-white font-medium group"
+            >
+              {item}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-100 group-hover:w-full"></span>
+            </button>
+          ))}
+        </nav>
+
+        {/* Profile Icon */}
+        <FaUserCircle className="w-8 h-8 text-white cursor-pointer" />
       </header>
 
       {/* Main Content */}
       <div className="flex flex-1 p-6 space-x-6">
         {/* Sidebar */}
-        <aside className="w-64 bg-gray-200 p-4 rounded-xl shadow-md">
+        <aside className="w-64 bg-white p-4 rounded-xl shadow-md">
           <div className="mb-6">
             <h2 className="font-semibold mb-2">Search</h2>
             <input
@@ -99,13 +93,13 @@ function Map() {
           </div>
           <div className="mb-6">
             <h2 className="font-semibold mb-2">Directions</h2>
-            <button className="w-full px-3 py-2 rounded-md bg-gray-500 text-white">
+            <button className="w-full px-3 py-2 rounded-md bg-blue-400 text-white">
               Get Directions
             </button>
           </div>
           <div>
             <h2 className="font-semibold mb-2">Navigation</h2>
-            <button className="w-full px-3 py-2 rounded-md bg-gray-500 text-white">
+            <button className="w-full px-3 py-2 rounded-md bg-blue-400 text-white">
               Start Navigation
             </button>
           </div>

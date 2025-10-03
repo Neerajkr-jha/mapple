@@ -1,14 +1,19 @@
+import bgImage from "../../assets/bg.jpg";
+
 export default function SignupPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="w-full max-w-sm bg-white/90 rounded-2xl shadow-xl p-6 sm:p-8">
         {/* Title */}
-        <h3 className="text-2xl font-bold text-center text-gray-800 mb-6">
+        <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4">
           Create an Account
         </h3>
 
         {/* Signup Form */}
-        <form className="space-y-5">
+        <form className="space-y-4">
           {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
@@ -17,7 +22,7 @@ export default function SignupPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -30,7 +35,7 @@ export default function SignupPage() {
             <input
               type="password"
               placeholder="Enter your password"
-              className="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -43,7 +48,7 @@ export default function SignupPage() {
             <input
               type="text"
               placeholder="Choose a username"
-              className="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -54,7 +59,7 @@ export default function SignupPage() {
               Usertype
             </label>
             <select
-              className="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="">Select user type</option>
@@ -74,7 +79,7 @@ export default function SignupPage() {
         </form>
 
         {/* Already have an account */}
-        <p className="text-center text-sm text-gray-600 mt-6">
+        <p className="text-center text-sm text-gray-600 mt-4">
           Already have an account?{" "}
           <a
             href="/login"
