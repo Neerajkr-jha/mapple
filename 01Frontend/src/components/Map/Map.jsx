@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { FaUserCircle } from "react-icons/fa"; // user profile icon
+import { useNavigate } from "react-router-dom";
 
 function Map() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const apiKey = "6815a707-0226-4b0c-826f-1805f1925a1d";
     const script1 = document.createElement("script");
@@ -93,7 +96,10 @@ function Map() {
           </div>
           <div className="mb-6">
             <h2 className="font-semibold mb-2">Directions</h2>
-            <button className="w-full px-3 py-2 rounded-md bg-blue-400 text-white">
+            <button
+              className="w-full px-3 py-2 rounded-md bg-blue-400 text-white"
+              onClick={() => navigate("/directions")}
+            >
               Get Directions
             </button>
           </div>

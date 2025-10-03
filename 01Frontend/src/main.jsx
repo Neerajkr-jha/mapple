@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+
 import App from "./App.jsx";
 import {
   createBrowserRouter,
@@ -13,6 +14,7 @@ import Login from "./components/Login/Login.jsx";
 import Signup from "./components/Signup/Signup.jsx";
 import Layout from "./Layout.jsx";
 import Map from "./components/Map/Map.jsx"; 
+import Directions from "./components/Direction/Directions.jsx";
 
 const router = createBrowserRouter( 
   createRoutesFromElements(
@@ -22,6 +24,7 @@ const router = createBrowserRouter(
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/map" element={<Map />}></Route>
+        <Route path="/directions" element={<Directions />}></Route>
       </Route>
     </>
   )
