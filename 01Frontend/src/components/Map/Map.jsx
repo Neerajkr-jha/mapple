@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
-function MapPage() {
+function Map() {
   useEffect(() => {
     // Create Mappls script elements
-    const apiKey = "7f606d2c-764c-4e9e-aa00-1714db3bbea0"; // Replace with your key
+    const apiKey = "6815a707-0226-4b0c-826f-1805f1925a1d";
     const script1 = document.createElement("script");
     script1.src = `https://apis.mappls.com/advancedmaps/api/${apiKey}/map_sdk?layer=vector&v=3.0&callback=initMap1`;
     script1.async = true;
@@ -124,4 +124,4 @@ function MapPage() {
   );
 }
 
-export default MapPage;
+export default Map;

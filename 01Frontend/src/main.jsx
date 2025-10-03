@@ -12,16 +12,16 @@ import "./index.css";
 import Login from "./components/Login/Login.jsx";
 import Signup from "./components/Signup/Signup.jsx";
 import Layout from "./Layout.jsx";
-import MapPage from "./components/Map_page/map.jsx";
+import Map from "./components/Map/Map.jsx"; 
 
-const router = createBrowserRouter(
+const router = createBrowserRouter( 
   createRoutesFromElements(
     <>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Login />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/map" element={<MapPage />}></Route>
+        <Route path="/map" element={<Map />}></Route>
       </Route>
     </>
   )
